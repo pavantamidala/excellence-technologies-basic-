@@ -3,24 +3,29 @@
 
 
 //Note:-Above provided api is not working so i am using https://jsonplaceholder.typicode.com/posts/1
-function getData(){
+function getData() {
     let p = document.getElementById("para")
-   let title = document.getElementById("title")
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                p.innerText =
-                    this.responseText;
-                    let data =JSON.parse(this.responseText)
-                    
-                    title.innerText = data.title
-                    p.innerText = data.body
-            }
-        };
-        xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
-        xhttp.send();
-    // fetch("https://jsonplaceholder.typicode.com/posts/1").then((res)=>{console.log(res.body)})
-     }
+    let title = document.getElementById("title")
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         p.innerText =
+    //             this.responseText;
+    //             let data =JSON.parse(this.responseText)
+
+    //             title.innerText = data.title
+    //             p.innerText = data.body
+    //     }
+    // };
+    // xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
+    // xhttp.send();
+    fetch("https://jsonplaceholder.typicode.com/posts/1").then((res) => {
+        return res.json()
+    }).then((res) => {
+        title.innerText = res.title
+        p.innerText = res.body
+    })
+}
 
 getData()
 // {

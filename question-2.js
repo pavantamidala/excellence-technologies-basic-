@@ -2,10 +2,9 @@
 // Example:
 // a) 00110001001110 - Output : 3[Max num of consecutive 1's is 3]
 // b) 1000010001 - Output : 1[Max num of consecutive 1's is 1]
-function consecutiveNum(){
-    let array = [0,0,1,1,0,0,0,1,0,0,1,1,1,0]
+let question2_array = [0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0]
+function consecutiveNum(array){
     let maxCount = 0;
-
     var count = 0;
     for(let i=0;i<array.length;i++){
         if(array[i]===1){
@@ -17,8 +16,6 @@ function consecutiveNum(){
             maxCount = count
         }
     }
-    
-console.log(maxCount)
     return maxCount;
 }
-consecutiveNum()
+console.log(consecutiveNum(question2_array)+ " "+"question 2")

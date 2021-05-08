@@ -34,18 +34,17 @@
 
 
 
-function objSorting() {
-    let ansObj = {}
-    var arr =[
-    { id: 4, name: "abc" },
-    { id: 10, name: "ab2"},
-    { id: 5, name: "bc3"},
-    { id: 6, name: "bc5"}
-]
+function objSorting(arr) {
+    
 let ans =arr.sort((obj1,obj2)=>{
     return obj1.id -obj2.id
 })    
-console.log(ans)
+return ans
 }
-
-objSorting()
+var question5_array = [
+    { id: 4, name: "abc" },
+    { id: 10, name: "ab2" },
+    { id: 5, name: "bc3" },
+    { id: 6, name: "bc5" }
+]
+ console.log(objSorting(question5_array))
